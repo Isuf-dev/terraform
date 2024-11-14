@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "my-terraform-state-bucket"
+    bucket = "morpheus-terraform-state-bucket"
     prefix = "terraform/state"
   }
 }
