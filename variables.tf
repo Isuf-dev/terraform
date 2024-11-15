@@ -57,3 +57,8 @@ variable "vpc_id" {
   type        = string
   description = "GCP VPC ID"
 }
+
+variable "impersonate_service_account_email" {
+  type        = string
+  description = "The service account to impersonate"
+}
