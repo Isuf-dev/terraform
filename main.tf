@@ -1,4 +1,4 @@
-resource "morpheus_vm" "gcp_vm" {
+resource "google_compute_instance" "gcp_vm_via_terraform_and_morpheus" {
   name          = "gcp-vm-example"
   description   = "VM on GCP managed by Morpheus"
   instance_type = var.instance_type
@@ -7,7 +7,6 @@ resource "morpheus_vm" "gcp_vm" {
   subnet_id     = var.subnet_id
   network_id    = var.vpc_id
 
-  # GCP-specific disk configuration
   disk {
     size         = var.disk_size_os
     disk_type    = "persistent"
@@ -23,7 +22,6 @@ resource "morpheus_vm" "gcp_vm" {
     encrypted    = true
   }
 
-  # Optional configuration (if available in your Morpheus setup)
   tags = ["cloud", "gcp"]
 }
 
