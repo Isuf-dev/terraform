@@ -1,5 +1,5 @@
 provider "google" {
-  credentials = file("bledi2024-0301f61eb7f0.json")  # GCP credentials JSON
+  impersonate_service_account = "EMAIL_OF_THE_SA"
   project     = var.gcp_project_id
   region      = var.gcp_region
 }
